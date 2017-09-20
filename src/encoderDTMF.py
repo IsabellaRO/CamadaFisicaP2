@@ -42,7 +42,7 @@ def grafico(data):
 
     plt.xlabel('Tempo')
     plt.ylabel('Valor')
-    plt.plot(lista_tempo[0:100], data[0:100], color="#FF00D4")
+    plt.plot(lista_tempo[0:1000], data[0:1000], color="#FF00D4")
     plt.show()
     
         
