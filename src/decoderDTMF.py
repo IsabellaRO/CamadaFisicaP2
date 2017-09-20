@@ -8,8 +8,6 @@ Created on Wed Sep 20 13:11:43 2017
 import numpy as np
 import sounddevice as sd
 import matplotlib.pyplot as plt
-import math
-import matplotlib.animation as animation
 
 t = 1
 fs = 44100
