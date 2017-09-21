@@ -32,7 +32,7 @@ def Play(y, fs):
     print("Fim da reprodução")
 
 contador = 0
-while contador <= 11:
+while contador <= 13:
     y = Record(duration, fs)
     Play(y, fs)
     

@@ -58,14 +58,5 @@ def Onda(data):
     
     
 Onda(0)
-Onda(1)
-Onda(2)
-Onda(3)
-Onda(4)
-Onda(5)
-Onda(6)
-Onda(7)
-Onda(8)
-Onda(9)
-Onda("ast")
-Onda("hash")
+Onda(0)
+Onda(0)
