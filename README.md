@@ -12,19 +12,19 @@ date: Setembro de 2017
 Projeto 2 Camada Física - 2017.2
 
 
-## Geração dos tonsOs tons são gerados a partir da soma de duas ondas senoides. A fórmula utilizada foi *sen(wt)* para gerar a onda, onde *w = 2πf*. O arquivo onde os tons são gerados, reproduzidos, e plotados pela primeira vez é o encoderDTMF.py.
+## Geração dos tons Os tons são gerados a partir da soma de duas ondas senoides. A fórmula utilizada foi *sen(wt)* para gerar a onda, onde *w = 2πf*. O arquivo onde os tons são gerados, reproduzidos, e plotados pela primeira vez é o encoderDTMF.py.
 
 
 ## Frequências que compõem cada tom
 |             |1209 Hz  |1336 Hz  |1477 Hz  |
-|:-----------:|:-------:|:-------:|:-------:|:-------:|
-|**697 Hz**   |1        |2        |3        |
+|:-----------:|:-------:|:-------:|:-------:||**697 Hz**   |1        |2        |3        |
 |**770 Hz**   |4        |5        |6        |
 |**852 Hz**   |7        |8        |9        |
 |**941 Hz**   |*        |0        |#        |
 
 
-|## Tons Gerados e Captados
+|
+## Tons Gerados e Captados
 
 Nos gráficos abaixo relaciona-se o sinal de tom no decorrer do tempo. Na esquerda estão as soma dos senos das duas frequências utilizadas, e na direita o gráfico do som que foi gravado de um computador que escutava o outro. As visíveis disparidades entre os gráficos correspondem as interferencias presentes em meio a gravação. O arquivo com o código que escuta, grava e plota um novo gráfico é o decoderDTMF.py
 
