@@ -50,6 +50,93 @@ def main():
 
     ## Exibe gráficos
     plt.show()
+    
+    ## Descobre tom com +/- 10Hz para cada valor de frequencias que formam um tom 
+    tons = []
+    for i in X:
+        if (687 <= X[i] <= 707):
+            if (1199 <= X[i] <= 1219):
+                tons.append("1")
+            elif (1326 <= X[i] <= 1346):
+                tons.append("2")
+            elif (1467 <= X[i] <= 1487):
+                tons.append("3")
+            elif (1623 < X[i] < 1643):
+                tons.append("A")
+
+        elif (760 < X[i] < 780):
+            if (1199 < X[i] < 1219):
+                tons.append("4")
+            elif (1326 < X[i] < 1346):
+                tons.append("5")
+            elif (1467 < X[i] < 1487):
+                tons.append("6")
+            elif (1623 < X[i] < 1643):
+                tons.append("B")
+                
+        elif (842 < X[i] < 862):
+            if (1199 < X[i] < 1219):
+                tons.append("7" )               
+            elif (1326 < X[i] < 1346):
+                tons.append("8")
+            elif (1467 < X[i] < 1487):
+                tons.append("9")
+            elif (1623 < X[i] < 1643):
+                tons.append("C")
+                
+        elif (931 < X[i] < 951):
+            if (1199 < X[i] < 1219):
+                tons.append("X")
+            elif (1326 < X[i] < 1346):
+                tons.append("0")
+            elif (1467 < X[i] < 1487):
+                tons.append("#")
+            elif (1623 < X[i] < 1643):
+                tons.append("D")
+                
+        elif (1199 < X[i] < 1219):
+            if (687 <= X[i] <= 707):
+                tons.append("1")
+            elif (760 < X[i] < 780):
+                tons.append("4")
+            elif (842 < X[i] < 862):
+                tons.append("7")
+            elif (931 < X[i] < 951):
+                tons.append("X")
+        
+        elif (1326 < X[i] < 1346):
+            if (687 <= X[i] <= 707):
+                tons.append("2")
+            elif (760 < X[i] < 780):
+                tons.append("5")
+            elif (842 < X[i] < 862):
+                tons.append("8")
+            elif (931 < X[i] < 951):
+                tons.append("0")
+        
+        elif (1467 < X[i] < 1487):
+            if (687 <= X[i] <= 707):
+                tons.append("3")
+            elif (760 < X[i] < 780):
+                tons.append("6")
+            elif (842 < X[i] < 862):
+                tons.append("9")
+            elif (931 < X[i] < 951):
+                tons.append("#")
+        
+        elif (1623 < X[i] < 1643):
+            if (687 <= X[i] <= 707):
+                tons.append("A")
+            elif (760 < X[i] < 780):
+                tons.append("B")
+            elif (842 < X[i] < 862):
+                tons.append("C")
+            elif (931 < X[i] < 951):
+                tons.append("D")
+        
+            
+    
+    
 
 if __name__ == "__main__":
     main()
