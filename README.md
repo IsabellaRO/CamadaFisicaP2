@@ -1,4 +1,4 @@
-# Camada Física -  Projeto 5 - DTMF
+﻿# Camada Física -  Projeto 5 - DTMF
 Por: Isabella Oliveira e Vitória Camilo (Insper)
 
 
@@ -33,3 +33,25 @@ Nos gráficos abaixo relaciona-se o sinal de tom no decorrer do tempo. Na esquer
 |0      | ![0](img/0p.png)        |![0](img/0.png)       |
 |*      | ![*](img/astp.png)  |![*](img/ast.png)    |
 |#      | ![#](img/hashp.png)     |![#](img/hash.png) |
+
+| Tom   | Sinal Transmitido       |Sinal Captado         |
+|:-----:|-------------------------|----------------------|
+|1      | ![1](img/T1.png)        |![1](img/Fourier1.png)      |
+|2      | ![2](img/T2.png)        |![2](img/Fourier2.png)      |
+|3      | ![3](img/T3.png)        |![3](img/Fourier3.png)      |
+|4      | ![4](img/T4.png)        |![4](img/Fourier4.png)      |
+|5      | ![5](img/T5.png)        |![5](img/Fourier5.png)      |
+|6      | ![6](img/T6.png)        |![6](img/Fourier6.png)      |
+|7      | ![7](img/T7.png)        |![7](img/Fourier7.png)      |
+|8      | ![8](img/T8.png)        |![8](img/Fourier8.png)      |
+|9      | ![9](img/T9.png)        |![9](img/Fourier9.png)      | 
+|0      | ![0](img/t0.png)        |![0](img/Fourier0.png)      |
+|*      | ![*](img/Tast.png)  |![*](img/Fourier10.png)   |
+|#      | ![#](img/Thash.png)     |![#](img/Fourier11.png)|
+
+
+## Frequências enviadas e recebidas
+As frequências enviadas são recebidas sem discrepância, e seguem de acordo com os valores que compõe cada tom (low, high).
+
+## Tempos utilizados
+Os audios transmitidos tem duração de 1 segundo, o mesmo setado na geração dos tons, e os gráficos são gerados para cada 1 segundo recebido, captando, assim, cada audio de tom por completo.
