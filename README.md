@@ -56,51 +56,75 @@ Nos gráficos abaixo relaciona-se o sinal de tom no decorrer do tempo. Na esquer
 As frequências enviadas são recebidas sem discrepância, pois há pouco ruído, e seguem de acordo com os valores que compõe cada tom (low, high).
 
 Tom 1: 
+
 Frequências Enviadas: 697, 1209 
+
 Frequências Recebidas: 697, 1209 
 
 Tom 2: 
+
 Frequências Enviadas: 697, 1336
+
 Frequências Recebidas: 697, 1336
 
 Tom 3: 
+
 Frequências Enviadas: 697, 1477
+
 Frequências Recebidas: 697, 1477 
 
 Tom 4: 
+
 Frequências Enviadas: 770, 1209 
+
 Frequências Recebidas: 770, 1209 
 
 Tom 5: 
+
 Frequências Enviadas: 770, 1336
+
 Frequências Recebidas: 770, 1336 
 
 Tom 6: 
+
 Frequências Enviadas: 770, 1447
+
 Frequências Recebidas: 770, 1447 
 
 Tom 7: 
+
 Frequências Enviadas: 852, 1209 
+
 Frequências Recebidas: 852, 1209 
 
 Tom 8: 
+
 Frequências Enviadas: 852, 1336 
+
 Frequências Recebidas: 852, 1336 
 
 Tom 9: 
+
 Frequências Enviadas: 852, 1477 
+
 Frequências Recebidas: 852, 1477 
 
 Tom 0: 
+
 Frequências Enviadas: 941, 1336 
+
 Frequências Recebidas: 941, 1336 
 
 Tom *: 
+
 Frequências Enviadas: 941, 1209 
+
 Frequências Recebidas: 941, 1209 
 
 Tom #: 
+
 Frequências Enviadas: 941, 1477 
+
 Frequências Recebidas: 941, 1477
 
 ## Tempos utilizados
