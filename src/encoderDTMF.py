@@ -44,7 +44,7 @@ def grafico(data):
     plt.ylabel('Valor')
     plt.plot(lista_tempo[0:1000], data[0:1000], color="#FF00D4")
     plt.axis("tight")
-    plt.show()
+    #plt.show()
         
         
 def Onda(data):
@@ -53,7 +53,7 @@ def Onda(data):
 
     #sd.play(tom, fs)
     #sd.wait()
-    grafico(tom)
+    #grafico(tom)
 
     
     
