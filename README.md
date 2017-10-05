@@ -34,7 +34,9 @@ Nos gráficos abaixo relaciona-se o sinal de tom no decorrer do tempo. Na esquer
 |*      | ![*](img/astp.png)  |![*](img/ast.png)    |
 |#      | ![#](img/hashp.png)     |![#](img/hash.png) |
 
-| Tom   | Sinal Transmitido       |Sinal Captado         |
+## Sinais Enviados e Recebidos
+
+| Tom   | Sinal Enviado       |Sinal Recebido         |
 |:-----:|-------------------------|----------------------|
 |1      | ![1](img/T1.png)        |![1](img/Fourier1.png)      |
 |2      | ![2](img/T2.png)        |![2](img/Fourier2.png)      |
