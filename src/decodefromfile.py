@@ -63,6 +63,10 @@ def main():
                 tons.append("3")
             elif (1623 < X[i] < 1643):
                 tons.append("A")
+            else:
+                print("Erro, frequência não reconhecida")
+                break                
+            
 
         elif (760 < X[i] < 780):
             if (1199 < X[i] < 1219):
@@ -73,6 +77,9 @@ def main():
                 tons.append("6")
             elif (1623 < X[i] < 1643):
                 tons.append("B")
+            else:
+                print("Erro, frequência não reconhecida")
+                break     
                 
         elif (842 < X[i] < 862):
             if (1199 < X[i] < 1219):
@@ -83,6 +90,9 @@ def main():
                 tons.append("9")
             elif (1623 < X[i] < 1643):
                 tons.append("C")
+            else:
+                print("Erro, frequência não reconhecida")
+                break     
                 
         elif (931 < X[i] < 951):
             if (1199 < X[i] < 1219):
@@ -93,6 +103,9 @@ def main():
                 tons.append("#")
             elif (1623 < X[i] < 1643):
                 tons.append("D")
+            else:
+                print("Erro, frequência não reconhecida")
+                break     
                 
         elif (1199 < X[i] < 1219):
             if (687 <= X[i] <= 707):
@@ -103,6 +116,9 @@ def main():
                 tons.append("7")
             elif (931 < X[i] < 951):
                 tons.append("X")
+            else:
+                print("Erro, frequência não reconhecida")
+                break     
         
         elif (1326 < X[i] < 1346):
             if (687 <= X[i] <= 707):
@@ -113,6 +129,9 @@ def main():
                 tons.append("8")
             elif (931 < X[i] < 951):
                 tons.append("0")
+            else:
+                print("Erro, frequência não reconhecida")
+                break     
         
         elif (1467 < X[i] < 1487):
             if (687 <= X[i] <= 707):
@@ -123,6 +142,9 @@ def main():
                 tons.append("9")
             elif (931 < X[i] < 951):
                 tons.append("#")
+            else:
+                print("Erro, frequência não reconhecida")
+                break     
         
         elif (1623 < X[i] < 1643):
             if (687 <= X[i] <= 707):
@@ -133,6 +155,13 @@ def main():
                 tons.append("C")
             elif (931 < X[i] < 951):
                 tons.append("D")
+            else:
+                print("Erro, frequência não reconhecida")
+                break
+        
+        else:
+            print("Erro, frequência não reconhecida")
+            break     
         
             
     
