@@ -54,20 +54,54 @@ Nos gráficos abaixo relaciona-se o sinal de tom no decorrer do tempo. Na esquer
 
 ## Frequências enviadas e recebidas
 As frequências enviadas são recebidas sem discrepância, pois há pouco ruído, e seguem de acordo com os valores que compõe cada tom (low, high).
-| Tom   | Frequências Enviadas |Frequências Recebidas |
-|:-----:|------------------|-----------------|
-|1      | 697, 1209        | 697, 1209       |
-|2      | 697, 1336        | 697, 1336       |
-|3      | 697, 1477        | 697, 1477       |
-|4      | 770, 1209        | 770, 1209       |
-|5      | 770, 1336        | 770, 1336       |
-|6      | 770, 1477        | 770, 1477       |
-|7      | 852, 1209        | 852, 1209       |
-|8      | 852, 1336        | 852, 1336       |
-|9      | 852, 1477        | 852, 1477       |
-|0      | 941, 1336        | 941, 1336       |
-|*      | 941, 1209        | 941, 1209       |
-|#      | 941, 1477        | 941, 1477       |
+
+Tom 1: 
+Frequências Enviadas: 697, 1209 
+Frequências Recebidas: 697, 1209 
+
+Tom 2: 
+Frequências Enviadas: 697, 1336
+Frequências Recebidas: 697, 1336
+
+Tom 3: 
+Frequências Enviadas: 697, 1477
+Frequências Recebidas: 697, 1477 
+
+Tom 4: 
+Frequências Enviadas: 770, 1209 
+Frequências Recebidas: 770, 1209 
+
+Tom 5: 
+Frequências Enviadas: 770, 1336
+Frequências Recebidas: 770, 1336 
+
+Tom 6: 
+Frequências Enviadas: 770, 1447
+Frequências Recebidas: 770, 1447 
+
+Tom 7: 
+Frequências Enviadas: 852, 1209 
+Frequências Recebidas: 852, 1209 
+
+Tom 8: 
+Frequências Enviadas: 852, 1336 
+Frequências Recebidas: 852, 1336 
+
+Tom 9: 
+Frequências Enviadas: 852, 1477 
+Frequências Recebidas: 852, 1477 
+
+Tom 0: 
+Frequências Enviadas: 941, 1336 
+Frequências Recebidas: 941, 1336 
+
+Tom *: 
+Frequências Enviadas: 941, 1209 
+Frequências Recebidas: 941, 1209 
+
+Tom #: 
+Frequências Enviadas: 941, 1477 
+Frequências Recebidas: 941, 1477
 
 ## Tempos utilizados
 Os audios transmitidos tem duração de 1 segundo, o mesmo setado na geração dos tons, e os gráficos são gerados para cada 1 segundo recebido, captando, assim, cada audio de tom por completo.
