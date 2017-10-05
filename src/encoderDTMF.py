@@ -5,7 +5,7 @@ Created on Wed Sep 20 11:12:56 2017
 @author: Vitoria
 """
 import numpy as np
-import sounddevice as sd
+#import sounddevice as sd
 import matplotlib.pyplot as plt
 import math
 
@@ -51,12 +51,10 @@ def Onda(data):
     
     tom = geraOnda(Tons(data))
 
-    sd.play(tom, fs)
-    sd.wait()
+    #sd.play(tom, fs)
+    #sd.wait()
     grafico(tom)
 
     
     
-Onda(0)
-Onda(0)
-Onda(0)
+Onda(1)

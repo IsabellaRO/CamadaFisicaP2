@@ -27,7 +27,7 @@ def main():
 
     # Import sound as file
     import soundfile as sf
-    y, fs = sf.read('./arquivos/ton2.wav')
+    y, fs = sf.read('./arquivos/audio11.wav')
 
     # Cacula a trasformada de Fourier do sinal
     X, Y = calcFFT(y, fs)
@@ -35,40 +35,33 @@ def main():
     ## Exibe modulo 
     plt.figure("abs(Y[k])")
     #plt.stem(X[0:10000], np.abs(Y[0:10000]), linefmt='b-', markerfmt='bo', basefmt='r-')
-    plt.plot(X,np.abs(Y))
+    db1 = 10 * np.log10(np.abs(Y)/20000)    
+    plt.plot(X,db1)
     plt.grid()
     plt.title('Modulo Fourier audio')
     
-
+    db2 = 10 * np.log10(np.angle(Y)/20000) 
     ## Exibe fase
     plt.figure("Fase(Y[k])")
-    plt.plot(X,np.angle(Y))
+    plt.plot(X,db2)
     plt.grid()
     plt.title('Modulo Fourier audio')
 
     indexes = peakutils.indexes(Y, thres=0.9, min_dist=268)
     print("Frequencias principais: " , X[indexes] , "Hz")
     pplot(X, Y, indexes)
-
     ## Exibe gráficos
+    plt.show()
+
+    
+    plt.plot(Y, db1)
+    plt.grid(True)
+    plt.ylabel("Decibéis (dB)")
+    plt.xlabel("Frequência (Hz)")
+    plt.title("Frequência x Decibéis")
     plt.show()
 
 if __name__ == "__main__":
     main()
     
     
-import soundfile as sf
-y, fs = sf.read('./arquivos/ton2.wav')
-
-    # Cacula a trasformada de Fourier do sinal
-X, Y = calcFFT(y, fs)
-
-
-db = 10 * np.log10(np.abs(Y))
-
-plt.plot(X, db)
-plt.grid(True)
-plt.ylabel("Decibéis (dB)")
-plt.xlabel("Frequência (Hz)")
-plt.title("Frequência x Decibéis")
-plt.show()
