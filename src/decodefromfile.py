@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import peakutils
 from peakutils.plot import plot as pplot
 import math
+import encoderDTMF
 
 # Calculate de FFT from a signal
 # https://docs.scipy.org/doc/scipy/reference/tutorial/fftpack.html
@@ -26,9 +27,11 @@ def calcFFT(signal, fs):
 def main():
 
     # Import sound as file
-    import soundfile as sf
-    y, fs = sf.read('./arquivos/audio11.wav')
-
+    #import soundfile as sf
+    tom = encoderDTMF.Tons("hash")
+    y = encoderDTMF.geraOnda(tom)
+    fs = 44100
+    #y, fs = sf.read(onda)
     # Cacula a trasformada de Fourier do sinal
     X, Y = calcFFT(y, fs)
 

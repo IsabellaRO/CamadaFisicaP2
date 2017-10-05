@@ -57,4 +57,4 @@ def Onda(data):
 
     
     
-Onda(1)
+Onda(0)
