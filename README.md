@@ -53,7 +53,7 @@ Nos gráficos abaixo relaciona-se o sinal de tom no decorrer do tempo. Na esquer
 
 
 ## Frequências enviadas e recebidas
-As frequências enviadas são recebidas com pouca discrepância, pois há pouco ruído, mas foi necessário o uso do software Audacity, pois a função peakutils muitas vezes não reconhecia os picos corretamente.
+As frequências enviadas são recebidas com pouca discrepância, pois há pouco ruído, mas foi necessário o uso do software Audacity, pois a função peakutils muitas vezes não reconhecia os picos corretamente. O nosso código está funcionando corretamente para os áudios 0, 1, 4, 5, 7, 8, #. Utilizamos a leitura de um arquivo de áudio ao invés de captar o áudio em tempo real pois os microfones dos computadores apresentaram muitos problemas.
 
 Tom 1: 
 
