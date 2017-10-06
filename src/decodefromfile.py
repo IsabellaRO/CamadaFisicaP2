@@ -29,7 +29,7 @@ def main():
             
     # Cacula a trasformada de Fourier do sinal transmitido
     
-    tom = encoderDTMF.Tons(6)
+    tom = encoderDTMF.Tons(0)
     y = encoderDTMF.geraOnda(tom)
     fs = 44100
     X, Y = calcFFT(y, fs)
@@ -42,8 +42,7 @@ def main():
 
     # Cacula a trasformada de Fourier do sinal recebido
     import soundfile as sf
-<<<<<<< HEAD
-    y, fs = sf.read('./arquivos/audio0.wav')
+    y, fs = sf.read('./arquivos/audio7.wav')
     X, Y = calcFFT(y, fs)
     db = 10 * np.log10(np.abs(Y)/20000)
     indexes = peakutils.indexes(Y, thres=0.4, min_dist=268)
@@ -65,14 +64,10 @@ def main():
             count+=1
                 
                 
-                
-                
     print(picos)
-=======
     y, fs = sf.read('./arquivos/audio6.wav')
     X, Y = calcFFT(y, fs)
     indexes = peakutils.indexes(Y, thres=0.8, min_dist=268)
->>>>>>> b7fa8d1aceae2a89e10dd0cd4668d0b408b62aa1
     print("Frequencias principais: " , X[indexes] , "Hz")
     plt.grid(True)
     plt.ylabel("Decibéis (dB)")
