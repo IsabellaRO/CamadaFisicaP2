@@ -42,7 +42,7 @@ def main():
 
     # Cacula a trasformada de Fourier do sinal recebido
     import soundfile as sf
-    y, fs = sf.read('./arquivos/audio1.wav')
+    y, fs = sf.read('./arquivos/audio6.wav')
     X, Y = calcFFT(y, fs)
     indexes = peakutils.indexes(Y, thres=0.8, min_dist=268)
     print("Frequencias principais: " , X[indexes] , "Hz")
@@ -50,7 +50,7 @@ def main():
     plt.ylabel("Decibéis (dB)")
     plt.xlabel("Frequência (Hz)")
     plt.title("Sinal Recebido")
-    #plt.plot(X, db)
+    plt.plot(X, db)
 
     #pplot(X, Y, indexes)
 
@@ -62,7 +62,7 @@ def main():
     db2 = 10 * np.log10(np.angle(Y)/20000) 
     plt.figure("Fase(Y[k])")
     plt.grid()
-    plt.plot(X,db2)
+    #plt.plot(X,db2)
     plt.show()
 
  ## Descobre tom com +/- 10Hz para cada valor de frequencias que formam um tom 
