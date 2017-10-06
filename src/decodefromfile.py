@@ -29,7 +29,7 @@ def main():
             
     # Cacula a trasformada de Fourier do sinal transmitido
     
-    tom = encoderDTMF.Tons("hash")
+    tom = encoderDTMF.Tons(6)
     y = encoderDTMF.geraOnda(tom)
     fs = 44100
     X, Y = calcFFT(y, fs)
@@ -42,16 +42,37 @@ def main():
 
     # Cacula a trasformada de Fourier do sinal recebido
     import soundfile as sf
-    y, fs = sf.read('./arquivos/ton2.wav')
+    y, fs = sf.read('./arquivos/audio0.wav')
     X, Y = calcFFT(y, fs)
     db = 10 * np.log10(np.abs(Y)/20000)
-    indexes = peakutils.indexes(Y, thres=0.9, min_dist=268)
+    indexes = peakutils.indexes(Y, thres=0.4, min_dist=268)
+    print(indexes)
+
+    
+    picos = []
+    pontos = []
+    count = 0
+    
+    while len(picos) < 2 and count < len(indexes):
+        pontos.append(indexes[count])
+        if indexes[count] < 680:
+            pontos.remove(indexes[count])  
+            count+=1  
+        else:
+            picos.append(indexes[count])
+            pontos.remove(indexes[count])
+            count+=1
+                
+                
+                
+                
+    print(picos)
     print("Frequencias principais: " , X[indexes] , "Hz")
     plt.grid(True)
     plt.ylabel("Decibéis (dB)")
     plt.xlabel("Frequência (Hz)")
     plt.title("Sinal Recebido")
-    #plt.plot(X, db)
+    plt.plot(X, db)
 
     #pplot(X, Y, indexes)
 
@@ -68,8 +89,8 @@ def main():
 
  ## Descobre tom com +/- 10Hz para cada valor de frequencias que formam um tom 
     tons = []
-    low = X[indexes][0]
-    high = X[indexes][1]
+    low = picos[0]
+    high = picos[1]
     low = int(low)
     high = int(high)
     print(low)
