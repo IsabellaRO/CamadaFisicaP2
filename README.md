@@ -38,7 +38,7 @@ Nos gráficos abaixo relaciona-se o sinal de tom no decorrer do tempo. Na esquer
 
 | Tom   | Sinal Enviado       |Sinal Recebido         |
 |:-----:|-------------------------|----------------------|
-|1      | ![1](img/F1.png =50x)        |![1](img/T1.png)      |
+|1      | ![1](img/F1.png {width=405px})        |![1](img/T1.png)      |
 |2      | ![2](img/F2.png)        |![2](img/T2.png)      |
 |3      | ![3](img/F3.png)        |![3](img/T3.png)      |
 |4      | ![4](img/F4.png)        |![4](img/T4.png)      |
