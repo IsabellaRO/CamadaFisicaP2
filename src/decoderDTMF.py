@@ -63,7 +63,7 @@ def calcFFT(signal, fs):
 def main():
 
     # Import sound as file
-    y, fs = sf.read('./arquivos/ton2.wav')
+    y, fs = sf.read('./arquivos/audio7.wav')
 
     # Cacula a trasformada de Fourier do sinal
     X, Y = calcFFT(y, fs)
@@ -93,13 +93,13 @@ if __name__ == "__main__":
     main()
     
 
-y, fs = sf.read('./arquivos/ton2.wav')
+y, fs = sf.read('./arquivos/audio11.wav')
 
     # Cacula a trasformada de Fourier do sinal
 X, Y = calcFFT(y, fs)
 
 
-db = 10 * np.log10(np.abs(Y))
+db = 10 * np.log10(np.abs(Y)/20000)
 
 plt.plot(X, db)
 plt.grid(True)
