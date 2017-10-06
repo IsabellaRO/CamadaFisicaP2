@@ -38,88 +38,88 @@ Nos gráficos abaixo relaciona-se o sinal de tom no decorrer do tempo. Na esquer
 
 | Tom   | Sinal Enviado       |Sinal Recebido         |
 |:-----:|-------------------------|----------------------|
-|1      | ![1](img/T1.png)        |![1](img/Fourier1.png)      |
-|2      | ![2](img/T2.png)        |![2](img/Fourier2.png)      |
-|3      | ![3](img/T3.png)        |![3](img/Fourier3.png)      |
-|4      | ![4](img/T4.png)        |![4](img/Fourier4.png)      |
-|5      | ![5](img/T5.png)        |![5](img/Fourier5.png)      |
-|6      | ![6](img/T6.png)        |![6](img/Fourier6.png)      |
-|7      | ![7](img/T7.png)        |![7](img/Fourier7.png)      |
-|8      | ![8](img/T8.png)        |![8](img/Fourier8.png)      |
-|9      | ![9](img/T9.png)        |![9](img/Fourier9.png)      | 
-|0      | ![0](img/t0.png)        |![0](img/Fourier0.png)      |
-|*      | ![*](img/Tast.png)  |![*](img/Fourier10.png)   |
-|#      | ![#](img/Thash.png)     |![#](img/Fourier11.png)|
+|1      | ![1](img/F1.png)        |![1](img/T1.png)      |
+|2      | ![2](img/F2.png)        |![2](img/T2.png)      |
+|3      | ![3](img/F3.png)        |![3](img/T3.png)      |
+|4      | ![4](img/F4.png)        |![4](img/T4.png)      |
+|5      | ![5](img/F5.png)        |![5](img/T5.png)      |
+|6      | ![6](img/F6.png)        |![6](img/T6.png)      |
+|7      | ![7](img/F7.png)        |![7](img/T7.png)      |
+|8      | ![8](img/F8.png)        |![8](img/T8.png)      |
+|9      | ![9](img/F9.png)        |![9](img/T9.png)      | 
+|0      | ![0](img/F0.png)        |![0](img/t0.png)      |
+|*      | ![*](img/Fast.png)  |![*](img/Tast.png)   |
+|#      | ![#](img/Fhash.png)     |![#](img/Thash.png)|
 
 
 ## Frequências enviadas e recebidas
-As frequências enviadas são recebidas sem discrepância, pois há pouco ruído, e seguem de acordo com os valores que compõe cada tom (low, high).
+As frequências enviadas são recebidas com pouca discrepância, pois há pouco ruído, mas foi necessário o uso do software Audacity, pois a função peakutils muitas vezes não reconhecia os picos corretamente.
 
 Tom 1: 
 
 Frequências Enviadas: 697, 1209 
 
-Frequências Recebidas: 697, 1209 
+Frequências Recebidas: 697, 1210 
 
 Tom 2: 
 
 Frequências Enviadas: 697, 1336
 
-Frequências Recebidas: 697, 1336
+Frequências Recebidas: 697, 1335
 
 Tom 3: 
 
 Frequências Enviadas: 697, 1477
 
-Frequências Recebidas: 697, 1477 
+Frequências Recebidas: 697, 1477
 
 Tom 4: 
 
 Frequências Enviadas: 770, 1209 
 
-Frequências Recebidas: 770, 1209 
+Frequências Recebidas: 769, 1211 
 
 Tom 5: 
 
 Frequências Enviadas: 770, 1336
 
-Frequências Recebidas: 770, 1336 
+Frequências Recebidas: 770, 1337 
 
 Tom 6: 
 
 Frequências Enviadas: 770, 1447
 
-Frequências Recebidas: 770, 1447 
+Frequências Recebidas: 769, 1351 
 
 Tom 7: 
 
 Frequências Enviadas: 852, 1209 
 
-Frequências Recebidas: 852, 1209 
+Frequências Recebidas: 852, 1208
 
 Tom 8: 
 
 Frequências Enviadas: 852, 1336 
 
-Frequências Recebidas: 852, 1336 
+Frequências Recebidas: 852, 1337 
 
 Tom 9: 
 
 Frequências Enviadas: 852, 1477 
 
-Frequências Recebidas: 852, 1477 
+Frequências Recebidas: 853, 1477 
 
 Tom 0: 
 
 Frequências Enviadas: 941, 1336 
 
-Frequências Recebidas: 941, 1336 
+Frequências Recebidas: 943, 1336 
 
 Tom *: 
 
 Frequências Enviadas: 941, 1209 
 
-Frequências Recebidas: 941, 1209 
+Frequências Recebidas: 941, 1277 
 
 Tom #: 
 

@@ -82,12 +82,75 @@ def main():
     plt.grid()
     plt.title('Modulo Fourier audio')
 
-    indexes = peakutils.indexes(Y, thres=0.9, min_dist=268)
+    indexes = peakutils.indexes(Y, thres=0.86, min_dist=268)
     print("Frequencias principais: " , X[indexes] , "Hz")
     pplot(X, Y, indexes)
 
     ## Exibe gráficos
     plt.show()
+    
+     ## Descobre tom com +/- 10Hz para cada valor de frequencias que formam um tom 
+    tons = []
+    low = X[indexes][0]
+    high = X[indexes][1]
+    low = int(low)
+    high = int(high)
+    print(low)
+    print(high)
+    if (687 <= low <= 707):
+        if (1199 <= high <= 1219):
+           tons.append("1")
+        elif (1326 <= high <= 1346):
+            tons.append("2")
+        elif (1467 <= high <= 1487):
+            tons.append("3")
+        elif (1623 < high < 1643):
+            tons.append("A")
+        else:
+            print("Erro, frequência não reconhecida")      
+        
+
+    elif (760 < low < 780):
+        if (1199 < high < 1219):
+            tons.append("4")
+        elif (1326 < high < 1346):
+            tons.append("5")
+        elif (1467 < high < 1487):
+            tons.append("6")
+        elif (1623 < high < 1643):
+            tons.append("B")
+        else:
+            print("Erro, frequência não reconhecida")
+            
+    elif (842 < low < 862):
+        if (1199 < high < 1219):
+            tons.append("7" )               
+        elif (1326 < high < 1346):
+            tons.append("8")
+        elif (1467 < high < 1487):
+            tons.append("9")
+        elif (1623 < high < 1643):
+            tons.append("C")
+        else:
+            print("Erro, frequência não reconhecida") 
+            
+    elif (931 < low < 951):
+        if (1199 < high < 1219):
+            tons.append("X")
+        elif (1326 < high < 1346):
+            tons.append("0")
+        elif (1467 < high < 1487):
+            tons.append("#")
+        elif (1623 < high < 1643):
+            tons.append("D")
+        else:
+            print("Erro, frequência não reconhecida")
+            
+    
+    else:
+        print("Erro, frequência não reconhecida")
+    
+    print(tons)
 
 if __name__ == "__main__":
     main()
@@ -99,7 +162,7 @@ y, fs = sf.read('./arquivos/ton2.wav')
 X, Y = calcFFT(y, fs)
 
 
-db = 10 * np.log10(np.abs(Y))
+db = 10 * np.log10(np.abs(Y)/20000)
 
 plt.plot(X, db)
 plt.grid(True)
@@ -107,3 +170,4 @@ plt.ylabel("Decibéis (dB)")
 plt.xlabel("Frequência (Hz)")
 plt.title("Frequência x Decibéis")
 plt.show()    
+
