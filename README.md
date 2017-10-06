@@ -38,18 +38,18 @@ Nos gráficos abaixo relaciona-se o sinal de tom no decorrer do tempo. Na esquer
 
 | Tom   | Sinal Enviado       |Sinal Recebido         |
 |:-----:|-------------------------|----------------------|
-|1      | ![1](img/T1.png)        |![1](img/Fourier1.png)      |
-|2      | ![2](img/T2.png)        |![2](img/Fourier2.png)      |
-|3      | ![3](img/T3.png)        |![3](img/Fourier3.png)      |
-|4      | ![4](img/T4.png)        |![4](img/Fourier4.png)      |
-|5      | ![5](img/T5.png)        |![5](img/Fourier5.png)      |
-|6      | ![6](img/T6.png)        |![6](img/Fourier6.png)      |
-|7      | ![7](img/T7.png)        |![7](img/Fourier7.png)      |
-|8      | ![8](img/T8.png)        |![8](img/Fourier8.png)      |
-|9      | ![9](img/T9.png)        |![9](img/Fourier9.png)      | 
-|0      | ![0](img/t0.png)        |![0](img/Fourier0.png)      |
-|*      | ![*](img/Tast.png)  |![*](img/Fourier10.png)   |
-|#      | ![#](img/Thash.png)     |![#](img/Fourier11.png)|
+|1      | ![1](img/F1.png)        |![1](img/T1.png)      |
+|2      | ![2](img/F2.png)        |![2](img/T2.png)      |
+|3      | ![3](img/F3.png)        |![3](img/T3.png)      |
+|4      | ![4](img/F4.png)        |![4](img/T4.png)      |
+|5      | ![5](img/F5.png)        |![5](img/T5.png)      |
+|6      | ![6](img/F6.png)        |![6](img/T6.png)      |
+|7      | ![7](img/F7.png)        |![7](img/T7.png)      |
+|8      | ![8](img/F8.png)        |![8](img/T8.png)      |
+|9      | ![9](img/F9.png)        |![9](img/T9.png)      | 
+|0      | ![0](img/F0.png)        |![0](img/t0.png)      |
+|*      | ![*](img/Fast.png)  |![*](img/Tast.png)   |
+|#      | ![#](img/Fhash.png)     |![#](img/Thash.png)|
 
 
 ## Frequências enviadas e recebidas
