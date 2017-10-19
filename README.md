@@ -1,6 +1,7 @@
-﻿# Camada Física -  Projeto 5 - DTMF
+﻿# Camada Física
 Por: Isabella Oliveira e Vitória Camilo (Insper)
 
+# Projeto 5 - DTMF
 
 ## Geração dos tons
 Os tons são gerados a partir da soma de duas ondas senoides. A fórmula utilizada foi *sen(wt)* para gerar a onda, onde *w = 2πf*. O arquivo onde os tons são gerados, reproduzidos, e plotados pela primeira vez é o *encoderDTMF.py*.
@@ -33,6 +34,8 @@ Nos gráficos abaixo relaciona-se o sinal de tom no decorrer do tempo. Na esquer
 |0      | ![0](img/0p.png)        |![0](img/0.png)       |
 |*      | ![*](img/astp.png)  |![*](img/ast.png)    |
 |#      | ![#](img/hashp.png)     |![#](img/hash.png) |
+
+# Projeto 6 - DTMF
 
 ## Sinais Enviados e Recebidos
 
@@ -129,3 +132,38 @@ Frequências Recebidas: 941, 1477
 
 ## Tempos utilizados
 Os audios transmitidos tem duração de 1 segundo, o mesmo setado na geração dos tons, e os gráficos são gerados para cada 1 segundo recebido, captando, assim, cada audio de tom por completo.
+
+# Projeto 7 - Modulação AM
+
+
+
+## Descrever a modulação e a demodulação
+
+Na modulação, o sinal é multiplicado por portadoras criadas, e filtrado por um Passa-Baixa com 3400 Hz de frequencia de corte, o maximo alcançado pela voz humana
+.
+Na demodulação, multiplica-se o sinal recebido pela portadora novamente, obtendo os sinais com diversas repetições, e então aplica-se o mesmo filtro Passa-Baixa para 
+selecionar apenas um dos sinais entre os diversos repetidos.
+
+## Descrever as frequências das portadoras utilizadas e as bandas ocupadas
+
+
+Utilizamos 7000 Hz e 14000 Hz para as portadoras, pois como o corte do filtro foi de 3400 Hz (ocupando 6800 Hz de banda após modular,
+ter os centros em 7000 Hz e 14000 Hz permite que não haja interferencia entre os sinais, pois um vai ocupar de 3600 Hz até 10400 Hz e o outro de 10600 Hz a 17400 Hz.
+
+
+
+## Transmissor
+Fourier dos sinais modulados
+
+![transmissor](img/transmissor.png)
+
+## Receptor
+Fourier das mensagens demoduladas
+
+![receptor](img/receptor.png)
+
+
+
+## Relação entre áudio transmitido e recebido
+
+As diferenças entre o som transmitido e o que foi recebido são...
