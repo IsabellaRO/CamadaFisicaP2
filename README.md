@@ -158,10 +158,10 @@ Fourier dos sinais modulados
 ![transmissor](img/transmissor.png)
 
 ## Receptor
-Fourier das mensagens demoduladas
+Mensagens demoduladas no tempo
 
 ![receptor](img/receptor.png)
-
+![receptor2](img/receptor2.png)
 
 
 ## Relação entre áudio transmitido e recebido

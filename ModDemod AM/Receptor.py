@@ -12,7 +12,7 @@ from scipy.fftpack import fft
 from scipy import signal as sg
 import math
 
-fs = 44100
+fs = 48000
    
 def Record(duration, fs):
     audio = sd.rec(int(duration*fs), fs, channels=1)
@@ -47,19 +47,21 @@ def LPF(signal, cutoff_hz, fs):
         
 def main():
     duration = 5
-    fs1= 2000
-    fs2= 4000
-    corte= 4000
+    fs1= 7000
+    fs2= 14000
+    corte= 3000
     
-    print("Gravando som")
-    y = Record(duration, fs)
+    print("Analisando som")
     
+    #y = Record(duration, fs) # Grava do ambiente
+    y, fs = sf.read('modulado.wav') # Carrega audio do arquivo
+
     #  Calcula a trasformada de Fourier do audio escutado
     X, Y = Fourier(y, fs)
     
     p1x,p1y = Portadoras(fs1,y)
     p2x,p2y = Portadoras(fs2,y)
-
+    
     # Multiplica o audio escutado pela portadora (demodula)
     final1 = y * p1y
     final2 = y * p2y
@@ -67,17 +69,11 @@ def main():
     fourier_final1x, fourier_final1y = Fourier(final1, fs)
     fourier_final2x, fourier_final2y = Fourier(final2, fs)
 
-    plt.plot(fourier_final1x,fourier_final1y)
-    plt.xlabel('Hz')    
-    plt.ylabel('dB')
+    plt.plot(LPF(final1, corte, fs))
     plt.grid()
-    plt.title('Decibéis por Hertz - Portadora 1')
     plt.show()
-    plt.plot(fourier_final2x,fourier_final2y)
-    plt.xlabel('Hz')    
-    plt.ylabel('dB')
+    plt.plot(LPF(final2, corte, fs))
     plt.grid()
-    plt.title('Decibéis por Hertz - Portadora 2')
     plt.show()
 
     # Filtra e reproduz o som
