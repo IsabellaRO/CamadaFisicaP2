@@ -1,51 +1,25 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Oct 15 21:18:25 2017
-
-@author: isabella
-"""
-
-import numpy as np
-import sounddevice as sd
-import matplotlib.pyplot as plt
 import soundfile as sf
-import wave
-import sys
-from scipy.signal import butter, lfilter
-from scipy.signal import freqs
+import numpy as np
+import matplotlib.pyplot as plt
 import math
 from scipy.fftpack import fft
-from scipy import signal as window
 from scipy import signal as sg
+import sounddevice as sd
+from itertools import zip_longest
 
-def lowPassFilter(signal, cutoff_hz, fs):
-        #####################
-        # Filtro
-        #####################
+def LPF(signal, cutoff_hz, fs):
+        # Filtro passa baixa
         # https://scipy.github.io/old-wiki/pages/Cookbook/FIRFilter.html
         nyq_rate = fs/2
         width = 5.0/nyq_rate
         ripple_db = 60.0 #dB
         N , beta = sg.kaiserord(ripple_db, width)
-        taps = sg.firwin(N, cutoff_hz/nyq_rate, window=('kaiser', beta))
-        return( sg.lfilter(taps, 1.0, signal))
+        taps = sg.firwin(N, corte/nyq_rate, window=('kaiser', beta))
+        
+        return(sg.lfilter(taps, 1.0, signal))
 
-
-def portadoras(f, audio):
-    # Cria as portadoras a partir de frequencia e audio
-    p1 = np.linspace(0, len(audio)/fs, len(audio))
-    p2 = np.sin(p1 * f * 2 * math.pi)
-    return (p1, p2)
-    
-def Play(y, fs):
-    print("Reproduzindo som") 
-    # reproduz o som   
-    sd.play(y, fs)
-    # aguarda fim da reprodução
-    sd.wait()
-    print("Fim da reprodução")
-    
-def Fourier(signal, fs):
+def calcFFT(signal, fs):
+        # Calcula Fourier
 
         N  = len(signal)
         T  = 1/fs
@@ -53,67 +27,55 @@ def Fourier(signal, fs):
         yf = fft(signal)
         return(xf, yf[0:N//2])
 
-fs = 44100
-#duration = 
-lista_tempo = np.linspace(0, duration, fs * t)
+# Frequencia de corte do passa-baixa
+corte = 3400
 
-#Leitura dos áudios
+# Le os audios
 m1, fs1 = sf.read('m1.wav')
-#m2, fs2 = sf.read('m2.wav')
-#-------------------------------------------------------
-#Definir cutOff
-cutOff = 4000
-# Filtro passa baixa
-m1F  = lowPassFilter(m1, 4000, fs1)    
-#m2F = 
-##################### plotar Fourier dos sinais
-xf, yf = Fourier(signal, fs) #fs mesmo
-#--------------------------------------------------------
-fc1, c1 = portadoras(fs1, m1)
-#fc2, c2 = portadoras(fs2, m2)
+m2,fs2 = sf.read('m2.wav')
 
-#Conferindo tamanhos
-if len(c1) == len(m1):
-    print("Sinal gerado tem mesmo tamanho de áudio lido :) ")
-##################### plotar Fourier dos sinais
-xf, yf = Fourier(signal, fs)
-#----------------------------------------------------------    
-##################### Multiplicar áudio pela portadora
-#am1 =  mensagem mesmo * portadora
-#am2 = 
-##################### plotar Fourier dos sinais
-xf, yf = Fourier(signal, fs)
-#--------------------------------------------------
-Soma1 = am1 + am2
-##################### plotar Fourier dos sinais
-xf, yf = Fourier(signal, fs)
-#--------------------------------------------------
-##################### transmitir isso no som com Play
+# Filtra com passa-baixa
+filtrom1 = LPF(m1[:,0], corte, fs1)
+filtrom2 = LPF(m2[:,0], corte, fs2)
 
+# Fourier da mensagem filtrada
+f1, Y1 = calcFFT(filtrom1, fs1)
+f2, Y2 = calcFFT(filtrom2, fs2)
 
+# Frequencia das portadoras
+fp1 = 7000
+fp2 = 14000
 
+t1 = np.linspace(0, len(filtrom1)/fs1, len(filtrom1))
+t2 = np.linspace(0, len(filtrom2)/fs2, len(filtrom2))
 
+# Portadoras
+p1 = np.sin(fp1*t1*2*math.pi)
+p2 = np.sin(fp2*t2*2*math.pi)
 
-#Extract Raw Audio from Wav File 0
-signal0 = som0.readframes(-1)
-signal0 = np.fromstring(signal0, 'Int16')
+# Fourier das portadoras
+p1fourier, Y1p = calcFFT(p1, fs1)
+p2fourier, Y2p = calcFFT(p2, fs2)
 
-plt.figure(1)
-plt.title('Signal Wave...')
-plt.plot(signal0)
+# Modulando
+am1 = filtrom1 * p1
+am2 = filtrom2 *p2
 
+# Fourier do sinal modulado
+amfourier1, Y1f = calcFFT(am1, fs1)
+amfourier2, Y2f = calcFFT(am2, fs2)
 
-# Transforma o gráfico do filtro mais plano matematicamente
-# CutOff ponto onde para de filtrar o que interessa
-# fs frequencia
-def butter_lowpass(cutOff, fs, order=5):
-    nyq = 0.5 * fs
-    normalCutoff = cutOff / nyq
-    b, a = butter(order, normalCutoff, btype='low', analog = True)
-    return b, a
+# Soma os dois sinais em um só com a função zip_longest
+sfinal = [x + y for x, y in zip_longest(am1, am2, fillvalue=0)]
 
-#lfilter filtra os dados low
-def butter_lowpass_filter(data, cutOff, fs, order=4):
-    b, a = butter_lowpass(cutOff, fs, order=order)
-    y = lfilter(b, a, data)
-    return y
+# Fourier da soma dos sinais
+fouriersoma, Yr = calcFFT(sfinal, fs1)
+plt.plot(fouriersoma, np.abs(Yr))
+plt.title('Fourier das duas mensagens moduladas')
+plt.show()
+
+# Reproduz e salva o sinal final
+sd.play(sfinal,fs1)
+sd.wait()
+sf.write("modulado.wav", LPF(sfinal,corte,fs1), fs1)
+print("Audio modulado foi salvo!")
