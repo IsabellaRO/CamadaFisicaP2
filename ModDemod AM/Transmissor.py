@@ -77,5 +77,5 @@ plt.show()
 # Reproduz e salva o sinal final
 sd.play(sfinal,fs1)
 sd.wait()
-sf.write("modulado.wav", LPF(sfinal,corte,fs1), fs1)
+sf.write("modulado.wav", sfinal, fs1)
 print("Audio modulado foi salvo!")
