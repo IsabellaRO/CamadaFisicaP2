@@ -166,4 +166,4 @@ Mensagens demoduladas no tempo
 
 ## Relação entre áudio transmitido e recebido
 
-As diferenças entre o som transmitido e o que foi recebido são...
+As diferenças entre o som transmitido e o que foi recebido são bem discretas, os demodulados estão um pouco mais abafados, mas há pouco ruído e é possível escutar bem a mensagem.
