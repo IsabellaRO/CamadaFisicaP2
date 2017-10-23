@@ -59,6 +59,13 @@ def main():
     #  Calcula a trasformada de Fourier do audio escutado
     X, Y = Fourier(y, fs)
     
+    plt.grid(True)
+    plt.xlabel("Frequência (Hz)")
+    plt.title("Fourier do sinal recebido")
+    y = np.abs(Y)
+    plt.plot(X, y)
+    plt.show()
+    
     p1x,p1y = Portadoras(fs1,y)
     p2x,p2y = Portadoras(fs2,y)
     
@@ -66,14 +73,32 @@ def main():
     final1 = y * p1y
     final2 = y * p2y
     
+    
+    plt.grid(True)
+    plt.xlabel("Frequência (Hz)")
+    plt.title("Fourier do sinal 1 demodulado")
+    plt.plot(final1)
+    plt.show()
+    
+    plt.grid(True)
+    plt.xlabel("Frequência (Hz)")
+    plt.title("Fourier do sinal 2 demodulado")
+    plt.plot(final2)
+    plt.show()
+    
     fourier_final1x, fourier_final1y = Fourier(final1, fs)
     fourier_final2x, fourier_final2y = Fourier(final2, fs)
-
+    
+    plt.grid(True)
+    plt.xlabel("Frequência (Hz)")
+    plt.title("Fourier do sinal 1 resultante")
     plt.plot(LPF(final1, corte, fs))
-    plt.grid()
     plt.show()
+    
+    plt.grid(True)
+    plt.xlabel("Frequência (Hz)")
+    plt.title("Fourier do sinal 2 resultante")
     plt.plot(LPF(final2, corte, fs))
-    plt.grid()
     plt.show()
 
     # Filtra e reproduz o som
